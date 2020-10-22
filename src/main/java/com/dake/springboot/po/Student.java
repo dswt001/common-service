@@ -1,11 +1,20 @@
 package com.dake.springboot.po;
 
 
-public class Student {
+public class Student implements Comparable{
 
     private String name;
-    private String age;
-    private String score;
+    private int age;
+    private double height;
+
+    public Student() {
+    }
+
+    public Student(String name, int age, double height) {
+        this.name = name;
+        this.age = age;
+        this.height = height;
+    }
 
     public String getName() {
         return name;
@@ -15,28 +24,23 @@ public class Student {
         this.name = name;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
-    public String getScore() {
-        return score;
+    public double getHeight() {
+        return height;
     }
 
-    public void setScore(String score) {
-        this.score = score;
+    public void setHeight(double height) {
+        this.height = height;
     }
-
     @Override
-    public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", age='" + age + '\'' +
-                ", score='" + score + '\'' +
-                '}';
+    public int compareTo(Object o) {
+        return 0;
     }
 }

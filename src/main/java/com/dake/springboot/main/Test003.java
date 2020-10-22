@@ -29,10 +29,6 @@ public class Test003 {
 //        Student s1;
         Student s1 = new Student();
         for (int i = 0; i < 5; i++) {
-//            s1 = new Student();
-            s1.setAge("18" + i);
-            s1.setName("a" + i);
-            s1.setScore("90" + i);
 
             list.add(s1);
         }
