@@ -38,5 +38,7 @@ public class Test003 {
         Random random = new Random();
         int i = random.nextInt(10);
 
+        list.contains("a");
+
     }
 }

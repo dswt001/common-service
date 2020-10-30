@@ -3,10 +3,12 @@ package com.dake.springboot.main;
 import com.dake.springboot.MyComparator;
 import com.dake.springboot.po.Student;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class JDK8 {
 
@@ -64,9 +66,81 @@ public class JDK8 {
             }
         });
         Collections.sort(studentList, (o1, o2) -> {
-            return o1.getAge() -o2.getAge();
+            return o1.getAge() - o2.getAge();
         });
 
         Collections.sort(studentList, (o1, o2) -> MyComparator.compareTo(o1, o2));
+
+        List<String> list1 = Arrays.asList("a", "d", "c");
+        list1.forEach(str -> {
+            boolean contains = list1.contains("a");
+        });
+
+        String[] strings = list1.toArray(new String[list1.size()]);
+
+
+        System.out.println("------------------------");
+        Student student = new Student();
+        student.setAge(18);
+        for (String str : strings) {
+//            System.out.println(str);
+            if (str.equals("c")) {
+                student.setAge(15);
+            } else {
+                student.setAge(20);
+            }
+            System.out.println(student.getAge());
+        }
+
+        System.out.println("-------------AAA-----------");
+        List<Object> list2 = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            List<String> list3 = Arrays.asList("a", "d", "c");
+            list3.forEach(str -> {
+                list2.add(str);
+            });
+        }
+        System.out.println(list2);
+
+        System.out.println("------------date-----------");
+        LocalDate now = LocalDate.now();
+        int len =  now.lengthOfYear();
+        LocalDate localDate = now.plusYears(17L);
+        String yy = now.format(DateTimeFormatter.ofPattern("yy"));
+        String yy1 = localDate.format(DateTimeFormatter.ofPattern("YY"));
+        System.out.println(len);
+        System.out.println(yy);
+        System.out.println(yy1);
+
+        System.out.println("----------atomic------------");
+
+        AtomicInteger atomicInteger = new AtomicInteger(000);
+        int i = atomicInteger.getAndAdd(1);
+        System.out.println(i);
+        System.out.println(atomicInteger);
+//        if (String.valueOf(i).contains("4")){}
+
+        AtomicReference<Object> ar = new AtomicReference<>();
+
+//        Integer a = 00001;
+        BigDecimal bigDecimal = new BigDecimal(00001);
+        BigDecimal plus = bigDecimal.plus();
+        System.out.println(plus);
+
+        System.out.println("--------------number-----------");
+        String format = String.format("%03d", 100);
+        System.out.println(format);
+        System.out.println("------charat");
+
+        String a = "abcdaa";
+//        char c = a.charAt(1);
+//        System.out.println(c);
+//        System.out.println(a.indexOf("b"));
+        System.out.println(a.indexOf("c", 1));
+        String a1 = a.replace("a", "0");
+        System.out.println(a1);
+        System.out.println(a);
+
     }
+
 }
