@@ -8,8 +8,7 @@ public class StringUtils {
 
     public static final String TIME_FORMATTER_PATTERN_YMDHMS = "yyyyMMddHHmmss";
 
-    public static String gerenateRandomId(String prefix, int length){
-
+    public static String gerenateRandomId(String prefix, int length) {
         StringBuilder sb = new StringBuilder(prefix);
         sb.append(getSysTimeStr(TIME_FORMATTER_PATTERN_YMDHMS));
 
@@ -34,7 +33,17 @@ public class StringUtils {
         return DateTimeFormatter.ofPattern(TIME_FORMATTER_PATTERN_YMDHMS).format(now);
     }
 
+    public static void testSubString() {
+        String a = "12345678";
+        String afterSubStr = a.substring(2);
+        String substring1 = a.substring(2, 4);
+        System.out.println(afterSubStr);
+        System.out.println(substring1);
+    }
+
     public static void main(String[] args) {
-        System.out.println(gerenateRandomId("ABNML", 26));
+
+//        System.out.println(gerenateRandomId("ABNML", 26));
+        testSubString();
     }
 }

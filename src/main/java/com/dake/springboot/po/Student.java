@@ -1,6 +1,5 @@
 package com.dake.springboot.po;
 
-
 public class Student implements Comparable{
 
     private String name;

@@ -4,6 +4,7 @@ import com.dake.springboot.MyComparator;
 import com.dake.springboot.po.Student;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -130,8 +131,19 @@ public class JDK8 {
         System.out.println("--------------number-----------");
         String format = String.format("%03d", 100);
         System.out.println(format);
-        System.out.println("------charat");
+        int num = 4;
+        String s5 = "%0" + num + "d";
+        String format1 = String.format(s5, 25);
+        DecimalFormat df = new DecimalFormat("0000");
+        String format2 = df.format(25);
+        String format3 = String.format("%1$s = %3$s %2$s%n", "Name", "san", "Zhang");
 
+//        String format2 = String.format("%1$04d %2$(,", 1, -1000);
+        System.out.println(format1);
+        System.out.println(format2);
+        System.out.println(format3);
+        System.out.println("------charat------------");
+//
         String a = "abcdaa";
 //        char c = a.charAt(1);
 //        System.out.println(c);
@@ -141,6 +153,30 @@ public class JDK8 {
         System.out.println(a1);
         System.out.println(a);
 
+//        CompletionService completionService =
+
+        Long l1 = 1L;
+
+
+        Long l2 = l1 + 1;
+
+        a.isEmpty();
+        a.isBlank();
+
+        System.out.println("----------replace------------------------");
+        String s9 = "abc";
+        String replace = s9.replace("4", "5");
+        System.out.println(replace);
+        a1.replaceAll("a", "b");
+        String[] split = "06200001L".split("0001");
+        System.out.println(split.length);
+        String s = split[0];
+        String s6 = split[1];
+        String s7 = s + "0005" + s6;
+        System.out.println(s7);
+        String s8 = "00001";
+        long l = Long.parseLong(s8);
+        System.out.println(l);
     }
 
 }
