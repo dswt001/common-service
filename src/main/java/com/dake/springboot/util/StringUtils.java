@@ -35,6 +35,8 @@ public class StringUtils {
 
     public static void testSubString() {
         String a = "12345678";
+        a.isEmpty();
+        a.isBlank();
         String afterSubStr = a.substring(2);
         String substring1 = a.substring(2, 4);
         System.out.println(afterSubStr);

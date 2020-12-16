@@ -177,6 +177,16 @@ public class JDK8 {
         String s8 = "00001";
         long l = Long.parseLong(s8);
         System.out.println(l);
+
+        s8.isBlank();
+
+        int int1 = 1;
+        for (int j = 0; j < 10; j++) {
+            int1 += 1;
+        }
+        System.out.println(int1);
+
+        Long.valueOf(s);
     }
 
 }
