@@ -13,9 +13,11 @@ public class Jdk15Main {
                     cde
                 """;
 
-        if (a instanceof String str) {
-            char c = str.charAt(1);
-        }
+        // instanceof 中的模式匹配 是预览功能，默认情况下禁用
+        // 请使用 --enable-preview 以启用 instanceof 中的模式匹配
+//        if (a instanceof String str) {
+//            char c = str.charAt(1);
+//        }
     }
 
     class EdDSA {
